@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>REST API Documentation</h1>
+
+    <h2>Overview</h2>
+    <p>
+      This documentation provides information about the REST API endpoints,
+      request methods, and response formats.
+    </p>
+
+    <h2>Endpoints</h2>
+
+    <h3>GET /api/users</h3>
+    <p>Retrieve a list of all users.</p>
+    <pre><code>
+    Request:
+    GET /api/users
+
+    Response:
+    Status: 200 OK
+    [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "email": "john.doe@example.com"
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "email": "jane.smith@example.com"
+        }
+    ]
+    </code></pre>
+
+    <h3>POST /api/users</h3>
+    <p>Create a new user.</p>
+    <pre><code>
+    Request:
+    POST /api/users
+    Content-Type: application/json
+    {
+        "name": "New User",
+        "email": "new.user@example.com"
+    }
+
+    Response:
+    Status: 201 Created
+    {
+        "id": 3,
+        "name": "New User",
+        "email": "new.user@example.com"
+    }
+    </code></pre>
+
+    <h3>GET /api/users/{id}</h3>
+    <p>Retrieve a user by ID.</p>
+    <pre><code>
+    Request:
+    GET /api/users/1
+
+    Response:
+    Status: 200 OK
+    {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john.doe@example.com"
+    }
+    </code></pre>
+
+    <h3>PUT /api/users/{id}</h3>
+    <p>Update a user by ID.</p>
+    <pre><code>
+    Request:
+    PUT /api/users/1
+    Content-Type: application/json
+    {
+        "name": "Updated User",
+        "email": "updated.user@example.com"
+    }
+
+    Response:
+    Status: 200 OK
+    {
+        "id": 1,
+        "name": "Updated User",
+        "email": "updated.user@example.com"
+    }
+    </code></pre>
+
+    <h3>DELETE /api/users/{id}</h3>
+    <p>Delete a user by ID.</p>
+    <pre><code>
+    Request:
+    DELETE /api/users/1
+
+    Response:
+    Status: 204 No Content
+    </code></pre>
+  </body>
+</html>
